@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas</title>
+		<script>
+            /**
+             * 在canvas上随便画一个方形
+             */
+            function draw_a_rect() {
+                var test_canvas=document.getElementById("test_canvas");
+                var cv=test_canvas.getContext("2d");
+                cv.fillStyle="black";
+                cv.fillRect(20,20,20,20);
+            }
+
+            /**
+             * 第一种清空方法
+             */
+            function clear_canvas1() {
+                var test_canvas=document.getElementById("test_canvas");
+                test_canvas.height=test_canvas.height;
+            }
+
+            /**
+             * 第二种清空方法
+             */
+            function clear_canvas2() {
+                var test_canvas=document.getElementById("test_canvas");
+                var cv=test_canvas.getContext("2d");
+                cv.clearRect(0,0,800,800);
+            }
+
+            /**
+             * 第三种清空方法
+             */
+            function clear_canvas3() {
+	            var test_canvas=document.getElementById("test_canvas");
+	            var cv=test_canvas.getContext("2d");
+	            cv.fillStyle="white";
+	            cv.fillRect(0,0,800,800);
+            }
+		</script>
+	</head>
+	<body>
+		<canvas id="test_canvas" width="800px" height="800px"
+		        style="border: 1px solid #000000;">
+		</canvas>
+		<button onclick="draw_a_rect()">画一个方形</button>
+		<button onclick="clear_canvas1()">清空方法1</button>
+		<button onclick="clear_canvas2()">清空方法2</button>
+		<button onclick="clear_canvas3()">清空方法3</button>
+	</body>
+</html>
