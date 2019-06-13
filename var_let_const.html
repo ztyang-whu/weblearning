@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>the difference of var/let/const</title>
+		<script>
+			//测试var的用法
+			var a=10;
+			function change_value_of_a() {
+				a=20
+            }
+            function var_test() {
+	            console.log(a);
+	            change_value_of_a();
+	            console.log(a);
+            }
+            //var定义的变量和其他语言的变量定义差不多
+
+			//测试let的用法
+			let b=10;
+			function change_value_of_b() {
+				let b;
+				b=30;
+				console.log("change函数内部b的值为："+b);
+            }
+            function let_test() {
+	            console.log(b);
+	            change_value_of_b();
+	            console.log(b);
+            }
+            //let就像是重新定义了一个变量一样，尽管这个变量的名称和之前的变量一样
+			//新的变量和之前定义的同名变量毫无关系，不会一起改变
+			//如果不是使用let b=20; 而是直接b=20; 的话，最终b的值仍然是20
+
+			//var和let的区别就是var相当于重新定义一个变量，而let就像是暂时赋值
+			//let感觉有点像新定义一个局部变量，只不过这个局部变量有一个同名变量而已
+			//两者互不干扰
+
+			//测试const用法
+			const c=10;
+			function change_value_of_c() {
+				c=20;
+            }
+            function const_test() {
+	            console.log(c);
+	            change_value_of_c();
+	            console.log(c);
+            }
+            //const和其他语言中差不多，也是定义一个常量，值无法改变
+		</script>
+	</head>
+	<body onload="const_test()">
+
+	</body>
+</html>
