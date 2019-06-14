@@ -14,7 +14,22 @@
 	            change_value_of_a();
 	            console.log(a);
             }
-            //var定义的变量和其他语言的变量定义差不多
+
+            //测试重复定义变量
+			var d=10;
+			function define_a_new_d(){
+			    var d=20;
+			}
+			function var_double_define_test(){
+			    console.log(d);
+			    define_a_new_d();
+			    console.log(d);
+			}
+            //var定义的变量在整个方法中可见，就算在我们常用的for循环中定义，
+			//该变量也能被方法中的其他元素访问，这和其他语言中的变量定义是不同的
+			//而let定义的是块作用域，仅仅只能在{}中访问，这和其他语言中的定义相似
+			//let 和 var 的另一不同是，在变量声明之前就访问变量的话，会直接
+			// 提示 ReferenceError，而不像 var 那样使用默认值 undefined
 
 			//测试let的用法
 			let b=10;
@@ -49,7 +64,7 @@
             //const和其他语言中差不多，也是定义一个常量，值无法改变
 		</script>
 	</head>
-	<body onload="const_test()">
+	<body onload="var_double_define_test()">
 
 	</body>
 </html>
