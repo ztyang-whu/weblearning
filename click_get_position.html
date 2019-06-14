@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>通过鼠标点击获取当前位置</title>
+		<script>
+			function print_position(event) {
+			    let x=event.clientX;
+			    //let y=MouseEvent.clientY;
+			    alert(x);
+				//console.log("("+x+","+y);
+            }
+		</script>
+	</head>
+	<body>
+		<canvas width="800px" height="800px" onclick="print_position(event)"
+		        style="border: 1px solid #000000;">
+
+		</canvas>
+	</body>
+</html>
