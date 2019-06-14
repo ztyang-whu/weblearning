@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>使用layer插件实现弹出层效果</title>
+		<script src="resources/jquery-3.4.1.min.js"></script>
+		<script src="resources/layer.js"></script>
+		<link rel="stylesheet" href="resources/layer.css">
+		<script>
+			$(document).ready(function () {
+				$("#test2").click(function () {
+					layer.msg('hello');
+                })
+            })
+		</script>
+	</head>
+	<body>
+		<button id="test2" >show_message</button>
+	</body>
+</html>
