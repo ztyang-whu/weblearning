@@ -4,17 +4,40 @@
 		<meta charset="UTF-8">
 		<title>使用layer插件实现弹出层效果</title>
 		<script src="resources/jquery-3.4.1.min.js"></script>
-		<script src="resources/layer.js"></script>
+		<script src="resources/layer/layer.js"></script>
 		<link rel="stylesheet" href="resources/layer.css">
 		<script>
+			//show_message
 			$(document).ready(function () {
-				$("#test2").click(function () {
-					layer.msg('hello');
+				$("#test2").on("click", function () {
+					layer.msg("hello");
+                });
+			});
+			//dialog_test1
+			$(document).ready(function () {
+				$("#test3").on("click", function () {
+				    layer.open({
+                        title: "打开一个对话框",
+                        content: "您好，欢迎光临"
+                    })
                 })
-            })
+            });
+			//dialog_test2
+			$(document).ready(function () {
+				$("#test4").on("click", function () {
+					layer.open({
+						type: 2,
+						title: "打开一个html页面",
+						content: ['canvas_clean.html', 'no'],
+						offset: 't',
+						maxmin: true,
+						area: ['900px', '900px'],
+					})
+                })
+            });
 		</script>
 	</head>
 	<body>
-		<button id="test2" >show_message</button>
+		<button id="test4" >show_message</button>
 	</body>
 </html>
